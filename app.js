@@ -8,7 +8,7 @@ function adicionarAmigo() {
     const nome = inputNome.value.trim();
 
     if (!nome) {
-        alert("Você não pode deixar o espaço vazio, antes de adicionar digite um nome");
+        alert("Por favor insira um nome");
         return;
     }
 
