@@ -8,7 +8,7 @@ function adicionarAmigo() {
     const nome = inputNome.value.trim();
 
     if (!nome) {
-        alert("Você não pode deixar o espaço vazio!");
+        alert("Você não pode deixar o espaço vazio, antes de adicionar digite um nome");
         return;
     }
 
@@ -27,7 +27,12 @@ function limparCampo() {
 function atualizarLista() {
     lista.innerHTML = ''; // Limpar a lista que já existe
 
-    amigosInseridos.forEach(amigo => {
+    if (amigosCadastrados.length === 0) {
+        lista.innerHTML = '<li>Nenhum amigo adicionado.</li>';
+        return;
+    }
+
+    amigosCadastrados.forEach(amigo => {
         const item = document.createElement('li');
         item.textContent = amigo;
         lista.appendChild(item);
